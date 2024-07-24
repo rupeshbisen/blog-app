@@ -20,6 +20,15 @@ const App = () => {
     loadPosts();
   }, [currentPage]);
 
+  console.log("blogs", blogs)
+  if (blogs.length === 0) {
+    return <div className="container mt-5">
+      <div className='d-flex justify-content-center align-content-center'>
+        <b>Post not found</b>
+
+      </div>
+    </div>;
+  }
   return (
     <BrowserRouter>
       <Routes>
